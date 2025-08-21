@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementación del Control de Acceso - PYME Alimenticia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+        .implementation-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #3b82f6;
+        }
+        .hardware {
+            border-left-color: #ef4444;
+        }
+        .software {
+            border-left-color: #10b981;
+        }
+        .hybrid {
+            border-left-color: #8b5cf6;
+        }
+        .simulation {
+            border-left-color: #f59e0b;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Implementación del Control de Acceso</h1>
+            <h2 class="text-2xl text-gray-600 mb-6">Sistema de Reconocimiento Facial para PYME Alimenticia</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-gray-700 text-lg">
+                    Análisis de opciones prácticas para la implementación del control de ingreso/egreso
+                    en el contexto de un proyecto académico
+                </p>
+            </div>
+        </div>
+
+        <!-- Objetivos de Aprendizaje -->
+        <div class="learning-objective bg-gray-800 text-white rounded-lg p-8 shadow-md mb-8">
+            <h3 class="text-2xl font-semibold mb-6">🎯 Objetivos de esta Entrega</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                    <h4 class="font-semibold mb-3">📊 Entender el Contexto Productivo</h4>
+            <ul class="list-disc list-inside space-y-1 text-white text-opacity-90">
+                <li>Procesos operativos de PYMES alimenticias</li>
+                <li>Necesidades específicas de control de acceso</li>
+                <li>Requisitos de seguridad y normativas</li>
+                <li>Flujos de trabajo del personal</li>
+            </ul>
+        </div>
+        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+            <h4 class="font-semibold mb-3">💻 Evaluar Tecnologías Aplicables</h4>
+            <ul class="list-disc list-inside space-y-1 text-white text-opacity-90">
+                <li>Tecnologías de reconocimiento facial</li>
+                <li>Frameworks de desarrollo</li>
+                <li>Opciones de implementación</li>
+                <li>Consideraciones técnicas</li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-6 p-4 bg-white bg-opacity-20 rounded-lg">
+        <p class="text-center">
+            <strong>El enfoque principal es la gestión del proyecto de desarrollo de software, 
+            reconociendo el contexto productivo de la PYME alimenticia y las necesidades de control de acceso </strong>
+        </p>
+    </div>
+</div>
+
+        <!-- Explicación del Problema -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">¿Cómo se implementa la denegación de acceso?</h3>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <h4 class="font-semibold text-blue-800 mb-3">✅ Control Activo del Acceso</h4>
+                    <p class="text-gray-700">
+                        El sistema analiza al empleado, verifica permisos y <strong>toma una decisión activa</strong> 
+                        sobre permitir o denegar la entrada físicamente.
+                    </p>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <h4 class="font-semibold text-green-800 mb-3">📊 Registro Pasivo</h4>
+                    <p class="text-gray-700">
+                        El sistema solo registra los accesos pero <strong>no interviene físicamente</strong> 
+                        en la apertura/cierre de puertas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 p-6 rounded-lg">
+                <h4 class="font-semibold text-yellow-800 mb-3">💡 Para la realización del trabajo práctico:</h4>
+                <p class="text-gray-700">
+                    Se recomienda enfocarse en el <strong>registro y verificación</strong> del acceso, 
+                    dejando la parte de control físico de puertas como una extensión opcional 
+                    que puede simularse para demostrar el concepto.
+                </p>
+            </div>
+        </div>
+
+        <!-- Opciones de Implementación -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Opciones de Implementación</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Opción 1: Hardware Completo -->
+                <div class="implementation-card hardware bg-white rounded-lg p-6 shadow-sm card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 text-red-800 rounded-full p-3 mr-4">🔧</div>
+                        <h4 class="font-semibold text-lg">Implementación con Hardware</h4>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700 mb-2">Componentes Necesarios:</h5>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Cámara para reconocimiento facial</li>
+                            <li>Controlador de puertas electrónico</li>
+                            <li>Cerraduras electromagnéticas</li>
+                            <li>Barrera física o torniquete</li>
+                            <li>Computadora de control</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700 mb-2">¿Es complejo?</h5>
+                        <p class="text-gray-600 text-sm">
+                            <strong>Sí, muy complejo:</strong> Requiere integración eléctrica, 
+                            conocimientos de hardware y mayor inversión.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-100 p-3 rounded">
+                        <p class="text-sm text-gray-600">
+                            <strong>Recomendación:</strong> No viable para el trabajo práctico inicial
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Opción 2: Simulación Software -->
+                <div class="implementation-card software bg-white rounded-lg p-6 shadow-sm card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 text-green-800 rounded-full p-3 mr-4">💻</div>
+                        <h4 class="font-semibold text-lg">Simulación por Software</h4>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700 mb-2">Componentes Necesarios:</h5>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Cámara web estándar</li>
+                            <li>Software de reconocimiento facial</li>
+                            <li>Interfaz visual de simulación</li>
+                            <li>Base de datos de empleados</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700 mb-2">¿Es complejo?</h5>
+                        <p class="text-gray-600 text-sm">
+                            <strong>Moderadamente complejo:</strong> Enfoque en programación 
+                            y algoritmos, sin hardware especializado.
+                        </p>
+                    </div>
+
+                    <div class="bg-green-100 p-3 rounded">
+                        <p class="text-sm text-green-800">
+                            <strong>Recomendación:</strong> Ideal para el trabajo práctico inicial - 
+                            Demuestra el concepto sin complejidad hardware
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Opción 3: Híbrido -->
+                <div class="implementation-card hybrid bg-white rounded-lg p-6 shadow-sm card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 text-purple-800 rounded-full p-3 mr-4">⚡</div>
+                        <h4 class="font-semibold text-lg">Enfoque Híbrido</h4>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700 mb-2">Componentes Necesarios:</h5>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Cámara web</li>
+                            <li>LEDs indicadores (verde/rojo)</li>
+                            <li>Buzzer o alarma sonora</li>
+                            <li>Interfaz web de control</li>
+                            <li>Raspberry Pi/Arduino opcional</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700 mb-2">¿Es complejo?</h5>
+                        <p class="text-gray-600 text-sm">
+                            <strong>Moderado:</strong> Combina software con hardware simple 
+                            para feedback visual/auditivo.
+                        </p>
+                    </div>
+
+                    <div class="bg-purple-100 p-3 rounded">
+                        <p class="text-sm text-purple-800">
+                            <strong>Recomendación:</strong> Buen balance para demostrar 
+                            concepto completo sin alta complejidad
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Opción 4: Simulación Completa -->
+                <div class="implementation-card simulation bg-white rounded-lg p-6 shadow-sm card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 text-yellow-800 rounded-full p-3 mr-4">🎯</div>
+                        <h4 class="font-semibold text-lg">Simulación Completa con Feedback</h4>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700 mb-2">Componentes Necesarios:</h5>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Interfaz web responsiva</li>
+                            <li>Simulador de cámara (subir fotos)</li>
+                            <li>Sistema de notificaciones</li>
+                            <li>Base de datos simulada</li>
+                            <li>Panel de control administrativo</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700 mb-2">¿Es complejo?</h5>
+                        <p class="text-gray-600 text-sm">
+                            <strong>Baja complejidad técnica:</strong> Enfoque puramente 
+                            de software, ideal para demostrar lógica de negocio.
+                        </p>
+                    </div>
+
+                    <div class="bg-yellow-100 p-3 rounded">
+                        <p class="text-sm text-yellow-800">
+                            <strong>Recomendación:</strong> Perfecto para el trabajo práctico inicial - 
+                            Máximo enfoque en algoritmos y lógica de negocio
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Propuesta Recomendada -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Propuesta Recomendada para el Proyecto</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-semibold text-blue-800 mb-4">🎯 Enfoque Principal: Simulación por Software</h4>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h5 class="font-medium mb-2">Cómo denegar el acceso:</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li><strong>Feedback visual:</strong> Interfaz muestra "Acceso Denegado" en rojo</li>
+                            <li><strong>Notificaciones:</strong> Alertas en tiempo real al administrador</li>
+                            <li><strong>Registro detallado:</strong> Log de intentos fallidos con timestamp</li>
+                            <li><strong>Simulación sonora:</strong> Sonido de alerta opcional</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-medium mb-2">Ventajas académicas:</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Enfoque en algoritmos y lógica de negocio</li>
+                            <li>Bajo costo de implementación</li>
+                            <li>Fácil demostración y presentación</li>
+                            <li>Escalable para futuras mejoras</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-green-800 mb-4">🚀 Componentes del Prototipo</h4>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 rounded-full p-2 mr-3">1</div>
+                            <div>
+                                <h5 class="font-medium">Sistema de Reconocimiento Facial</h5>
+                                <p class="text-sm text-gray-600">OpenCV + Python o librerías JavaScript</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 rounded-full p-2 mr-3">2</div>
+                            <div>
+                                <h5 class="font-medium">Interfaz Web</h5>
+                                <p class="text-sm text-gray-600">Dashboard con estado de acceso en tiempo real</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 rounded-full p-2 mr-3">3</div>
+                            <div>
+                                <h5 class="font-medium">Base de Datos</h5>
+                                <p class="text-sm text-gray-600">Empleados, horarios y registros de acceso</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 rounded-full p-2 mr-3">4</div>
+                            <div>
+                                <h5 class="font-medium">Sistema de Notificaciones</h5>
+                                <p class="text-sm text-gray-600">Alertas para acceso no autorizado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Análisis del Contexto Productivo -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">📊 Análisis del Contexto Productivo</h3>            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="font-semibold text-blue-800 mb-4">🏭 Características de PYME Alimenticia</h4>
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h5 class="font-medium mb-2">Procesos Productivos:</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Turnos rotativos de producción</li>
+                            <li>Áreas con diferentes niveles de acceso</li>
+                            <li>Requisitos de higiene y seguridad alimentaria</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h5 class="font-medium mb-2">Necesidades de Control:</h5>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Registro de ingreso/egreso por turnos</li>
+                            <li>Control de acceso por áreas autorizadas</li>
+                            <li>Cumplimiento de normativas BPM</li>
+                            <li>Reportes para auditorías</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-green-800 mb-4">🔍 Aspectos para la Gestión del Proyecto</h4>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 rounded-full p-2 mr-3">1</div>
+                            <div>
+                                <h5 class="font-medium">Definición de Alcance</h5>
+                                <p class="text-sm text-gray-600">Delimitar funcionalidades según necesidades reales del contexto productivo</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 rounded-full p-2 mr-3">2</div>
+                            <div>
+                                <h5 class="font-medium">Selección Tecnológica</h5>
+                                <p class="text-sm text-gray-600">Evaluar tecnologías apropiadas para el entorno específico</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 rounded-full p-2 mr-3">3</div>
+                            <div>
+                                <h5 class="font-medium">Planificación</h5>
+                                <p class="text-sm text-gray-600">Estimar tiempos y recursos según complejidad técnica</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-gray-200 rounded-full p-2 mr-3">4</div>
+                            <div>
+                                <h5 class="font-medium">Riesgos y Mitigación</h5>
+                                <p class="text-sm text-gray-600">Identificar posibles problemas técnicos y operativos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusión -->
+        <div class="bg-gray-800 text-white rounded-lg p-8">
+            <h3 class="text-2xl font-semibold mb-4">Conclusión para el Trabajo Práctico</h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-semibold text-yellow-300 mb-3">🎓 Enfoque Práctico:</h4>
+                    <p class="text-gray-300">
+                        Para este proyecto académico, es perfectamente válido y recomendable 
+                        implementar un <strong>sistema de simulación</strong> que demuestre 
+                        la lógica de control de acceso sin necesidad de hardware complejo.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-green-300 mb-3">✅ Cumplimiento de Objetivos:</h4>
+                    <p class="text-gray-300">
+                        Este enfoque permite cumplir con los objetivos de aprendizaje en 
+                        <strong>gestión de proyectos de desarrollo de software</strong>, 
+                        comprendiendo el contexto productivo y la selección de tecnologías adecuadas
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-yellow-300 mb-3">🏭 Entendimiento del Contexto</h4>
+                    <p class="text-gray-300">
+                        El análisis del contexto productivo de una PYME alimenticia nos permite 
+                        comprender las necesidades reales y diseñar una solución de software 
+                        que se alinee con los procesos operativos y requisitos normativos del sector.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold text-green-300 mb-3">💻 Evaluación Tecnológica</h4>
+                    <p class="text-gray-300">
+                    La exploración de diferentes opciones tecnológicas nos proporciona 
+                    las bases para tomar decisiones informadas en la gestión del proyecto, 
+                    considerando factores como complejidad, costos y viabilidad técnica.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script interactivo para las cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card-hover');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 15px 30px -5px rgba(0, 0, 0, 0.2)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
