@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglas de Negocio - Control de Ingreso PYME Alimenticia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .rule-item {
+            border-left: 4px solid #3b82f6;
+            background: white;
+        }
+        .priority-high {
+            border-left-color: #ef4444;
+        }
+        .priority-medium {
+            border-left-color: #f59e0b;
+        }
+        .priority-low {
+            border-left-color: #10b981;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Reglas de Negocio</h1>
+            <h2 class="text-2xl text-gray-600 mb-6">Sistema de Control de Ingreso con Reconocimiento Facial</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-gray-700 text-lg">
+                    Documento que establece las reglas de negocio para el prototipo de control de acceso 
+                    en una PYME alimenticia utilizando tecnología de reconocimiento facial.
+                </p>
+            </div>
+        </div>
+
+        <!-- Reglas de Control de Acceso -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                <span class="bg-blue-100 text-blue-800 rounded-full p-2 mr-3">🔐</span>
+                Reglas de Control de Acceso y Seguridad
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="rule-item priority-high rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-001: Control de Acceso por Zonas</h4>
+                    <p class="text-gray-700">El sistema debe permitir definir niveles de acceso diferentes según las áreas de la planta (producción, almacén, oficinas).</p>
+                </div>
+
+                <div class="rule-item priority-high rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-002: Horarios de Acceso</h4>
+                    <p class="text-gray-700">El acceso debe estar restringido según los turnos laborales establecidos para cada empleado.</p>
+                </div>
+
+                <div class="rule-item priority-medium rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-003: Registro de Eventos</h4>
+                    <p class="text-gray-700">Todo intento de acceso (exitoso o fallido) debe quedar registrado con timestamp y detalles del evento.</p>
+                </div>
+
+                <div class="rule-item priority-high rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-004: Múltiples Métodos de Autenticación</h4>
+                    <p class="text-gray-700">El sistema debe permitir autenticación por reconocimiento facial + código PIN como método de respaldo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reglas de Reconocimiento Facial -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                <span class="bg-green-100 text-green-800 rounded-full p-2 mr-3">👤</span>
+                Reglas de Reconocimiento Facial
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="rule-item priority-high rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-101: Umbral de Confianza</h4>
+                    <p class="text-gray-700">El sistema debe requerir un mínimo de 95% de confianza en la identificación para permitir el acceso.</p>
+                </div>
+
+                <div class="rule-item priority-medium rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-102: Múltiples Registros Faciales</h4>
+                    <p class="text-gray-700">Cada empleado debe tener al menos 3 registros faciales desde diferentes ángulos y condiciones de iluminación.</p>
+                </div>
+
+                <div class="rule-item priority-medium rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-103: Actualización de Modelos</h4>
+                    <p class="text-gray-700">El sistema debe permitir la actualización periódica de los modelos faciales para mejorar la precisión.</p>
+                </div>
+
+                <div class="rule-item priority-low rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-104: Detección de Suplantación</h4>
+                    <p class="text-gray-700">El sistema debe incluir mecanismos básicos de detección de suplantación (detección de vivacidad).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reglas de Gestión de Personal -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                <span class="bg-purple-100 text-purple-800 rounded-full p-2 mr-3">👥</span>
+                Reglas de Gestión de Personal
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="rule-item priority-high rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-201: Roles y Permisos</h4>
+                    <p class="text-gray-700">Definición clara de roles (operario, supervisor, administrador) con permisos específicos para cada uno.</p>
+                </div>
+
+                <div class="rule-item priority-high rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-202: Turnos Laborales</h4>
+                    <p class="text-gray-700">Gestión de turnos con horarios específicos y control de horas extras automático.</p>
+                </div>
+
+                <div class="rule-item priority-medium rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-203: Ausencias y Vacaciones</h4>
+                    <p class="text-gray-700">Integración con sistema de gestión de ausencias para bloquear acceso durante períodos no laborales.</p>
+                </div>
+
+                <div class="rule-item priority-low rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-204: Notificaciones</h4>
+                    <p class="text-gray-700">Sistema de alertas para accesos fuera de horario o intentos fallidos repetidos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reglas de Cumplimiento Normativo -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                <span class="bg-red-100 text-red-800 rounded-full p-2 mr-3">⚖️</span>
+                Reglas de Cumplimiento Normativo
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="rule-item priority-high rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-301: Protección de Datos</h4>
+                    <p class="text-gray-700">Cumplimiento con normativas de protección de datos personales (Ley 25.326 en Argentina).</p>
+                </div>
+
+                <div class="rule-item priority-high rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-302: Seguridad Alimentaria</h4>
+                    <p class="text-gray-700">Control de acceso estricto a áreas de producción para cumplir con BPM (Buenas Prácticas de Manufactura).</p>
+                </div>
+
+                <div class="rule-item priority-medium rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-303: Auditoría</h4>
+                    <p class="text-gray-700">Mantenimiento de registros de acceso por 6 meses mínimo para auditorías internas y externas.</p>
+                </div>
+
+                <div class="rule-item priority-medium rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-304: Consentimiento</h4>
+                    <p class="text-gray-700">Obtención de consentimiento explícito para el uso de datos biométricos según normativa vigente.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reglas Técnicas y de Implementación -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6 flex items-center">
+                <span class="bg-yellow-100 text-yellow-800 rounded-full p-2 mr-3">💻</span>
+                Reglas Técnicas y de Implementación
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="rule-item priority-high rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-401: Disponibilidad</h4>
+                    <p class="text-gray-700">El sistema debe tener una disponibilidad mínima del 99% durante horarios laborales.</p>
+                </div>
+
+                <div class="rule-item priority-medium rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-402: Respuesta</h4>
+                    <p class="text-gray-700">Tiempo de respuesta menor a 2 segundos para el reconocimiento facial.</p>
+                </div>
+
+                <div class="rule-item priority-medium rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-403: Backup</h4>
+                    <p class="text-gray-700">Sistema de respaldo automático de la base de datos y registros de acceso.</p>
+                </div>
+
+                <div class="rule-item priority-low rounded-lg p-6 shadow-sm">
+                    <h4 class="font-semibold text-lg mb-2">RN-404: Escalabilidad</h4>
+                    <p class="text-gray-700">Arquitectura que permita escalar hasta 100 usuarios concurrentes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prioridades y Consideraciones -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Prioridades y Consideraciones</h3>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="bg-red-100 text-red-800 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                        <span class="font-bold">Alta</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Reglas críticas para el funcionamiento básico del sistema</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-yellow-100 text-yellow-800 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                        <span class="font-bold">Media</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Reglas importantes pero no críticas para la operación inicial</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-green-100 text-green-800 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                        <span class="font-bold">Baja</span>
+                    </div>
+                    <p class="text-sm text-gray-600">Mejoras y funcionalidades adicionales para versiones futuras</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-gray-800 text-white rounded-lg p-6 text-center">
+            <p class="text-sm">Proyecto Profesional 1 - Control de Ingreso con Reconocimiento Facial</p>
+            <p class="text-xs text-gray-400 mt-2">Estas reglas de negocio servirán como guía para el desarrollo del prototipo y asegurarán la alineación con los objetivos del proyecto</p>
+        </div>
+    </div>
+
+    <script>
+        // Script para mejorar la interactividad
+        document.addEventListener('DOMContentLoaded', function() {
+            // Agregar tooltips a las reglas
+            const rules = document.querySelectorAll('.rule-item');
+            rules.forEach(rule => {
+                rule.addEventListener('click', function() {
+                    this.classList.toggle('bg-blue-50');
+                });
+            });
+
+            // Smooth scroll para navegación
+            document.querySelectorAll('h3').forEach(heading => {
+                heading.addEventListener('click', function() {
+                    this.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
